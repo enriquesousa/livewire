@@ -7,7 +7,6 @@ use Livewire\Component;
 class Actions extends Component
 {
     public $nombre;
-
     public function render()
     {
         return view('livewire.actions')->layout('layouts.theme');

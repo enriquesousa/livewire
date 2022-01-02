@@ -1,7 +1,19 @@
 <div>
+    
     <label for="">Nombre</label>
-    <input wire:keydown.enter="$set('nombre','Fax')" type="text">
+
+    {{-- Refresca inmediatamente lso cambios en $nombre --}}
+    {{-- <input wire:model='nombre' type="text"> --}}
     <br>
-    <button wire:click="cambiarNombre('Melisa')">Cambiar</button>
+
+    {{-- magic actions set(), actualiza $nombre hasta dar el enter --}}
+    <input wire:keydown.enter="$set('nombre','Sousa')" type="text">
+    <br>
+
+    {{-- Para mandar llamar una funcion en app/Http/Livewire/Actions.php --}}
+    <button wire:click="cambiarNombre('Ivonne')">Cambiar</button>
+    <br>
+
     Nombre: {{$nombre}}
+
 </div>

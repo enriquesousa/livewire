@@ -1,4 +1,5 @@
 <div>
+
     <div class="row mb-5">
         <div class="col">
             <label for="">Capital del Banco</label>
@@ -8,6 +9,6 @@
         </div>
     </div>
 
+    {{-- render el view de resources/views/livewire/tarjeta.blade.php --}}
     <livewire:tarjeta />
-
 </div>

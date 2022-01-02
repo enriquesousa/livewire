@@ -1,13 +1,9 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use Livewire\Component;
-
 class Banco extends Component
 {
     public $capital = 1000;
-
     protected $listeners = ['recibido' => 'saldoRecibido'];
 
     public function saldoRecibido()

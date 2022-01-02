@@ -8,6 +8,8 @@ class Inline extends Component
 {
     public function render()
     {
+        
         return view('livewire.inline')->layout('layouts.theme');
+
     }
 }

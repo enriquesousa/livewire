@@ -21,7 +21,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('fullpage', FullPage::class)->name('fullpage');
+
 Route::get('properties', Properties::class)->name('properties');
+
 Route::get('databinding', Databinding::class)->name('databinding');
 Route::get('actions', Actions::class)->name('actions');
 Route::get('bancos', Banco::class)->name('bancos');

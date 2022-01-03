@@ -1,5 +1,5 @@
 <div>
-    
+
     <h3 class="text-center font-weight-bold">Registrar Usuario</h3>
     <div class="row mt-2">
         <div class="col-sm-12 col-md-4">
@@ -26,7 +26,6 @@
             @if( $photo )
             <img src="{{ $photo->temporaryUrl() }}" height="150px">
             @endif
-
         </div>
 
         <div class="col-sm-12 mt-3">

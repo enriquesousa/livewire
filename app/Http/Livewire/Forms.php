@@ -5,12 +5,14 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class Forms extends Component
 {
     use WithFileUploads;
     public $name, $email, $password, $photo;
 
+    // Los $rules y $messages los dejamos con un accessor de tipo protected y los movemos al inicio del componente Forms, para poder tenerlos en forma global en el componente. Y el método updated($propiedad) valida solo la propiedad que en tiempo real se le esta pasando desde el frontend. Y en el método store() solo dejar $this->validate(); esto automáticamente detecta los $rules y $messages globales protected. y los aplica.
     protected $rules = [
         'name' => 'required|max:10|min:3',
         'email' => 'required|email',
@@ -19,13 +21,13 @@ class Forms extends Component
     protected $messages = [
         'name.required' => 'El nombre es requerido',
         'name.min' => 'El nombre debe tener al menos 3 caracteres',
-        'name.max' => 'El nombre debe tener máximo 5 caracteres',
+        'name.max' => 'El nombre debe tener máximo 10 caracteres',
         'email.required' => 'Ingresa el email',
         'email.email' => 'El email es inválido',
         'password.required' => 'Password requerido',
         'password.min' => 'El password debe tener al menos 3 caracteres',
     ];
-    
+
     public function updated($propertyName)
     {   
         $this->validateOnly($propertyName);
@@ -46,10 +48,9 @@ class Forms extends Component
         ]);
 
         if (!empty($this->photo)) {
-            // generar nombre unico
+            // generar nombre único
             $customFileName = uniqid() . '_.' . $this->photo->extension();
             $this->photo->storeAs('public/avatars', $customFileName);
-
             $user->photo = $customFileName;
             $user->save();
         }

@@ -8,13 +8,11 @@ use Livewire\WithFileUploads;
 
 class Forms extends Component
 {
-
     use WithFileUploads;
-
     public $name, $email, $password, $photo;
 
     protected $rules = [
-        'name' => 'required|max:5|min:3',
+        'name' => 'required|max:10|min:3',
         'email' => 'required|email',
         'password' => 'required|min:3'
     ];
@@ -33,25 +31,19 @@ class Forms extends Component
         $this->validateOnly($propertyName);
     }
 
-
-
     public function render()
     {
         return view('livewire.forms')->layout('layouts.theme');
     }
 
-
     public function Store()
     {
         $this->validate();
-
-
         $user = User::create([
             'name' => $this->name,
             'email' => $this->email,
             'password' => bcrypt($this->password)
         ]);
-
 
         if (!empty($this->photo)) {
             // generar nombre unico
@@ -62,11 +54,12 @@ class Forms extends Component
             $user->save();
         }
 
-
-        // feedback hacia el front
+        // feedback hacia el front p/notificar al usuario
         $this->dispatchBrowserEvent('user-register', ['result' => 'Usuario registrado']);
 
-        // reset de las propiedades
+        // forma clásica de limpiar propiedades
+        //$this->name = '';
+        // Forma moderna de limpiar, reset de las propiedades
         $this->reset('name', 'email', 'password', 'photo');
     }
 }

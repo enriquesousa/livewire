@@ -18,7 +18,7 @@
                 <td>
                     {{-- <button wire:click="destroy(1)" class="btn btn-danger">Eliminar</button> --}}
                     <button onclick="confirmar(1)" class="btn btn-danger">Eliminar</button>
-                    {{-- <button onclick="confirmar(1)" class="btn btn-warning">Eliminar</button> --}}
+                    <button onclick="confirmar(1)" class="btn btn-warning">Eliminar</button>
                 </td>
             </tr>
 
@@ -40,9 +40,10 @@
             })
         })
 
-        // window.addEventListener('destroy-result', event => {
-        //     alert(event.detail.otro)
-        // })
+        window.addEventListener('destroy-result', event => {
+            // alert(event.detail.resultado)
+            alert(event.detail.otro)
+        })
 
     </script>
 </div>

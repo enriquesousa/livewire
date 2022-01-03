@@ -13,13 +13,12 @@ class Events extends Component
 
 
     protected $listeners = ['destroy' => 'destroy'];
-
     public function destroy($id)
     {
         // eliminando registro
 
         //event
-        $this->emit('destroy-result', 'Registro eliminado');
-        // $this->dispatchBrowserEvent('destroy-result', ['resultado' => 'Eliminación exitosa', 'otro' => 'otro resultado']);
+        // $this->emit('destroy-result', 'Registro eliminado');
+        $this->dispatchBrowserEvent('destroy-result', ['resultado' => 'Eliminación exitosa', 'otro' => 'otro resultado']);
     }
 }

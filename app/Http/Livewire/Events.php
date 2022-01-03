@@ -19,7 +19,7 @@ class Events extends Component
         // eliminando registro
 
         //event
-        //$this->emit('destroy-result', 'Registro eliminado');
-        $this->dispatchBrowserEvent('destroy-result', ['resultado' => 'Eliminacion exitosa', 'otro' => 'otro resultado']);
+        $this->emit('destroy-result', 'Registro eliminado');
+        // $this->dispatchBrowserEvent('destroy-result', ['resultado' => 'Eliminación exitosa', 'otro' => 'otro resultado']);
     }
 }

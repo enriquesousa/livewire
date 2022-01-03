@@ -16,7 +16,7 @@ class Forms extends Component
         'email' => 'required|email',
         'password' => 'required|min:3'
     ];
-    protected    $messages = [
+    protected $messages = [
         'name.required' => 'El nombre es requerido',
         'name.min' => 'El nombre debe tener al menos 3 caracteres',
         'name.max' => 'El nombre debe tener máximo 5 caracteres',
@@ -25,9 +25,9 @@ class Forms extends Component
         'password.required' => 'Password requerido',
         'password.min' => 'El password debe tener al menos 3 caracteres',
     ];
-
+    
     public function updated($propertyName)
-    {
+    {   
         $this->validateOnly($propertyName);
     }
 

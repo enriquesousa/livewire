@@ -66,7 +66,7 @@
                     </ul>
                     <ul class="nav navbar-nav float-right">
 
-                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1 user-name text-bold-700"> @guest LuisFax @else {{ Auth()->user()->name }} @endguest</span><span class="avatar avatar-online"><img src="{{ asset('lfax_logo.png') }}" alt="avatar"><i></i></span></a>
+                        <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="mr-1 user-name text-bold-700"> @guest LuisFax @else {{ Auth()->user()->name }} @endguest</span><span class="avatar avatar-online"><img src="{{ asset('pos_logo.png') }}" alt="avatar"><i></i></span></a>
                             <div class="dropdown-menu dropdown-menu-right">
 
                                 <a class="dropdown-item" href="login-with-bg-image.html"><i class="ft-power"></i> Salir</a>

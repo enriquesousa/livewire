@@ -7,6 +7,7 @@ use App\Http\Livewire\Properties;
 use App\Http\Livewire\Databinding;
 use App\Http\Livewire\Events;
 use App\Http\Livewire\Forms;
+use App\Http\Livewire\Loading;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +27,9 @@ Route::get('databinding', Databinding::class)->name('databinding');
 Route::get('actions', Actions::class)->name('actions');
 Route::get('bancos', Banco::class)->name('bancos');
 Route::get('events', Events::class)->name('events');
-
 Route::get('forms', Forms::class)->name('forms');
+
+Route::get('loading', Loading::class)->name('loading');
 
 
 Route::get('/', function () {

@@ -5,7 +5,7 @@
             <input wire:model='search' type="text" class="form-control" placeholder="Buscar por nombre / correo">
         </div>
         <div class="col-sm-12 col-md-2">
-            <button class="btn btn-primary" data-toggle="modal" data-terget="#modalUser">Agregar</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalUser">Agregar</button>
         </div>
         <div class="col-sm-12 mt-2">
             <table class="table table-bordered">
@@ -97,7 +97,6 @@
         window.addEventListener('notify', event => {
             alert(event.detail.result)
         })
-
 
     </script>
 

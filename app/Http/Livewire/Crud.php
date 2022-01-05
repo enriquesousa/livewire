@@ -12,6 +12,25 @@ class Crud extends Component
     public $name, $email, $password, $user_id=0, $hiddenpassword;
     protected $paginationTheme = 'bootstrap';
 
+    // Validaciones, $rules y $messages al inicio del componente!
+    // Y el método updated($propiedad) valida solo la propiedad que en tiempo real se le esta pasando desde el frontend.
+    // Y en el método store() solo dejar $this->validate(); esto automáticamente detecta los $rules y $messages globales protected. 
+    // y los aplica.
+    protected $rules = [
+        'name' => 'required|max:10|min:3',
+        'email' => 'required|email',
+        'password' => 'required|min:3'
+    ];
+    protected $messages = [
+        'name.required' => 'El nombre es requerido',
+        'name.min' => 'El nombre debe tener al menos 3 caracteres',
+        'name.max' => 'El nombre debe tener máximo 10 caracteres',
+        'email.required' => 'Ingresa el email',
+        'email.email' => 'El email es inválido',
+        'password.required' => 'Password requerido',
+        'password.min' => 'El password debe tener al menos 3 caracteres',
+    ];
+
     public function edit(User $user)
     {
         $this->user_id = $user->id;
@@ -25,6 +44,8 @@ class Crud extends Component
 
     public function store()
     {
+        // $this->validate();
+
         $user = User::updateOrCreate(
             ['id' => $this->user_id],
             [

@@ -9,7 +9,7 @@ class Crud extends Component
 {
     use WithPagination;
 
-    public $search;
+    public $search, $action;
     protected $paginationTheme = 'bootstrap';
 
     public function render()
